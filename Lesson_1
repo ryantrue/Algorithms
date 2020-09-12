@@ -6,23 +6,123 @@
 //  Copyright © 2020 Rayen D. All rights reserved.
 //
 
+#include <stdio.h>
+#include <stdlib.h> //solution13
+#include <time.h> //solution13
 
+void solution1();
+void solution2();
+void solution3();
+void solution4();
+void solution5();
+void solution6();
+void solution7();
+void solution8();
+void solution9();
+void solution10();
+void solution11();
+void solution12();
+void solution13();
+void solution14();
+void menu();
+
+
+int maxInt(int a, int b, int c)
+{
+    if ((a > b) || (a = b)){
+        if (a > c)
+            return a;
+        return c;
+    } else {
+        if ((b > c) || (b = c))
+            return b;
+        else
+            return c;
+    }
+}
+
+int main(int argc, const char * argv[]) {
+    int sel = 0;
+    do
+    {
+        menu();
+        scanf("%i", &sel);
+        switch (sel)
+        {
+            case 1:
+                solution1();
+                break;
+            case 2:
+                solution2();
+                break;
+            case 3:
+                solution3();
+                break;
+            case 4:
+                solution4();
+                break;
+            case 5:
+                solution5();
+                break;
+            case 6:
+                solution6();
+                break;
+            case 7:
+                solution7();
+                break;
+            case 8:
+                solution8();
+                break;
+            case 9:
+                solution9();
+                break;
+            case 10:
+                solution10();
+                break;
+            case 11:
+                solution11();
+                break;
+            case 12:
+                solution12();
+                break;
+            case 13:
+                solution13();
+                break;
+            case 14:
+                solution14();
+                break;
+            case 0:
+                printf("Bye-bey\n");
+                break;
+            default:
+                printf("Wrong selected\n");
+        }
+    } while (sel != 0);
     
-    //1. Ввести вес и рост человека. Рассчитать и вывести индекс массы тела по формуле I=m/(h*h); где m-масса тела в килограммах, h - рост в метрах.
-    #include <stdio.h>
+    printf("Hello, World!\n");
+    return 0;
+}
+
+void solution1()
+{
+    printf("Solution 1\n");
+    
+
+//1. Ввести вес и рост человека. Рассчитать и вывести индекс массы тела по формуле I=m/(h*h); где m-масса тела в килограммах, h - рост в метрах.
+#include <stdio.h>
 #include <stdlib.h> 
 #include <time.h> 
-    double m;
-    double h;
-    double i;
-    
-    printf("Input your mass and height, in kilograms and meters respectively\n");
-    printf("format m-h, like 70-1.8 : \n");
-    scanf("%lf-%lf", &m, &h);
-    
-    i = m / (h * h);
-    
-    printf("Your BMI - %lf", i);
+double m;
+double h;
+double i;
+
+printf("Input your mass and height, in kilograms and meters respectively\n");
+printf("format m-h, like 70-1.8 : \n");
+scanf("%lf-%lf", &m, &h);
+
+i = m / (h * h);
+
+printf("Your BMI - %lf", i);
 
 void solution2()
 {
@@ -439,28 +539,28 @@ void solution14()
     
     while (i < n) {
         
-            iR = i;
-            
-            while (iR > 10) {
-                iR = iR / 10;
-                k = k * 10;
-            }
-            
-            iR = i * i;
-            
-            while (iR > 10) {
-                iR = iR / 10;
-                k2 = k2 * 10;
-            }
-            
-            kF = k2 / k;
-            iF = (i * i) % kF;
-            
-            if (i == iF)
-                printf("I find automorphic number - %d\n", i);
-            
-            k = k2 = 1;
-            i += 1;
+        iR = i;
+        
+        while (iR > 10) {
+            iR = iR / 10;
+            k = k * 10;
+        }
+        
+        iR = i * i;
+        
+        while (iR > 10) {
+            iR = iR / 10;
+            k2 = k2 * 10;
+        }
+        
+        kF = k2 / k;
+        iF = (i * i) % kF;
+        
+        if (i == iF)
+            printf("I find automorphic number - %d\n", i);
+        
+        k = k2 = 1;
+        i += 1;
     }
 }
 
